@@ -1,41 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{{title}}</title>
-</head>
-<body>
+{% extends '../public/main.njk'%}
+{% block body %}
 
-  <p>{{ 'StrIng' | upper }}</p>
+<p>{{'Noah' | center }}</p>
 
-  <script>
-    function lower(str) {
-      return str.toLowerCase()
-    }
-
-  </script>
-
-  <p>{{ data.str }}</p>
-
-  {% if data.bool %}
-  <p>
-    if true I will show
-  </p>
-  {% endif %}
-
-  {% for p in data.array %}
-  <p>{{p}}</p>
-  {% endfor %}
-
-  {% for key, value in data.obj %}
-  <p>{{key}}: {{value}}</p>
-  {% endfor %}
-
-  <script src="/javascripts/index.js"></script>
-
-  <script>
-    console.log({{ data | dump | safe }})
-  </script>
-
-</body>
-</html>
+{% endblock %}
