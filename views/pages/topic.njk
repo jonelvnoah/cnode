@@ -1,7 +1,48 @@
 {% extends "../public/main.njk" %}
 
+{% block css%}
+  <link rel="stylesheet" href="/stylesheets/topic.css">
+{% endblock%}
+
 {% block body %}
 
-  <p>This is topic.njk</p>
+  <div id="topic" class="container">
+    <div id="topic-body">
+      <div id="topic-header">
+        <div id="topic-title">
+          <h1>{{data.title}}</h1>
+        </div>
+        <div id="title-info">
+          <span class="title-info-item">发布于 {{data.create_at | last_reply_time}}</span>
+          <span class="title-info-item">作者 {{data.author.loginname}}</span>
+          <span class="title-info-item">{{data.visit_count}} 次浏览</span>
+          <span class="title-info-item">来自 {{data | cnode_tag}}</span>
+        </div>
+      </div>
+      <div id="topic-content">
+        {{data.content | safe}}
+      </div>
+    </div>
+    <div id="topic-replys">
+      <div id="reply-header">
+        <span>{{data.replies.length}} 回复</span>
+      </div>
+      {% for reply in data.replies%}
+      <div class="topic-reply">
+        <div class="reply-avatar">
+          <img src="{{reply.author.avatar_url}}" alt="">
+        </div>
+        <div class="reply-header">
+          <div class="reply-name">{{reply.author.loginname}}</div>
+          <div class="reply-floor">{{loop.index + 1}} 楼</div>
+          <div class="reply-time">{{reply.create_at | last_reply_time}}</div>
+        </div>
+        <div class="reply-content">
+          {{reply.content | safe}}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 
 {% endblock %}

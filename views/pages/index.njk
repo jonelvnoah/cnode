@@ -1,6 +1,57 @@
 {% extends "../public/main.njk" %}
 
-{% block body %}
+{% block css%}
+  <link rel="stylesheet" href="/stylesheets/index.css">
+{% endblock%}
 
-  <p>i'm sb</p>
+{% block body %}
+  <div class="container">
+    <div id="tabs">
+      <ul>
+        <li class="tab" tab="all">
+          <a href="#" class="active">全部</a>
+        </li>
+        <li class="tab" tab="good">
+          <a href="#">精华</a>
+        </li>
+        <li class="tab" tab="share">
+          <a href="#">分享</a>
+        </li>
+        <li class="tab" tab="ask">
+          <a href="#">问答</a>
+        </li>
+        <li class="tab" tab="job">
+          <a href="#">招聘</a>
+        </li>
+        <li class="tab" tab="test">
+          <a href="#">客户端测试</a>
+        </li>
+      </ul>
+    </div>
+
+    <ul id="topics">
+      {% for topic in data%}
+      <li class="topic" tab="{{topic.tab}}">
+        <span class="topicCreaterAvator">
+          <img src="{{topic.author.avatar_url}}" alt="">
+        </span>
+        <span class="topicViewNumber">
+          <span class="reply">{{topic.reply_count}}</span>
+          <span class="divider">/</span>
+          <span class="view">{{topic.visit_count}}</span>
+        </span>
+        <span class="tag">{{topic | cnode_tag}}</span>
+        <span class="title">{{topic.title}}</span>
+        <span class="lastReplyAvator">
+          <img src="" alt="">
+        </span>
+        <span class="lastReplyTime">{{topic.last_reply_at | last_reply_time}}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}
+
+{% block script%}
+  <script type="text/javascript" src="/javascripts/index.js"></script>
+{% endblock%}

@@ -2,12 +2,56 @@
   margin: 0;
   padding: 0;
 }
-
 .container{
+  position: relative;
   width: 1200px;
+  margin:0 auto;
 }
 
 #header{
   background: #444;
   height: 50px;
+}
+
+#logo{
+  position: absolute;
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  line-height: 50px;
+  width: auto;
+  cursor: pointer;
+}
+
+#nav {
+  float: right;
+  list-style: none;
+}
+
+.nav-item{
+  display: inline-block;
+  line-height: 50px;
+  padding: 0 15px;
+}
+
+.nav-item a{
+  text-decoration: none;
+  color: #ccc;
+  font-size: 13px;
+  transition: color .3s;
+}
+
+.nav-item a:hover{
+  color: yellow;
+}
+
+#footer{
+  height: 100px;
+  background-color: #eaeaea;
+  text-align: center;
+}
+
+.site-info{
+  display: inline-block;
+  line-height: 100px;
 }
