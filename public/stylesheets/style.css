@@ -29,6 +29,7 @@
 }
 
 .nav-item{
+  position: relative;
   display: inline-block;
   line-height: 50px;
   padding: 0 15px;
@@ -43,6 +44,57 @@
 
 .nav-item a:hover{
   color: yellow;
+}
+
+#user-login-dropdown{
+  /* display: none; */
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #aaa;
+  z-index: 9999;
+}
+
+.not-login{
+  width: 300px;
+  padding: 20px;
+}
+
+#input-token{
+  width: 160px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+#login-button{
+  width: 40px;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #ededed;
+  border-radius: 3px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.login-user-info{
+  width: 200px;
+  text-align: center;
+  padding: 10px;
+}
+
+.login-user-info p{
+  margin: 10px;
+  color: #aaa;
+}
+
+.login-user-avatar{
+  height: 100px;
+}
+
+.login-user-avatar img{
+  height: 100%;
 }
 
 #footer{

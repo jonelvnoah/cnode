@@ -79,3 +79,24 @@ body{
 .reply-time{
   display: inline-block;
 }
+
+.markdown-text h1{
+  border-bottom: 1px solid #ededed;
+  margin-bottom: 15px;
+}
+
+.markdown-text p{
+  font-size: 15px;
+  margin: 15px 0;
+  line-height: 25px;
+}
+
+.markdown-text h2{
+  margin: 30px 0 15px 0;
+  border-bottom: 1px solid #ededed;
+  font-size: 26px;
+}
+
+.markdown-text ul li{
+  list-style: none;
+}
